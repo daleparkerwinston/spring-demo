@@ -7,16 +7,11 @@ pipeline {
                 sh 'echo spring-demo'
             }
         }
-//        stage('Maven build') {
-//            steps {
-//                withMaven {
-//                    sh "mvn clean package"
-//                }
-//            }
-//        }
-        stage('Next step') {
+        stage('Maven build') {
             steps {
-                sh 'echo testing'
+                withMaven {
+                    sh "mvn clean package"
+                }
             }
         }
     }
