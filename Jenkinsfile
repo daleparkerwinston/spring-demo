@@ -1,3 +1,5 @@
+import ch.qos.logback.core.encoder.EchoEncoder
+
 pipeline {
     environment {
         registry = "daleparkerwinston/demo-spring-app"
@@ -13,6 +15,7 @@ pipeline {
         }
         stage('Building image') {
             steps{
+                echo "Building Image"
                 script {
                     dockerImage = docker.build "daleparkerwinston/demo-spring-app:${env.BUILD_TAG}"
                 }
