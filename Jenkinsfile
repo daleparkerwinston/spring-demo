@@ -9,6 +9,12 @@ pipeline {
                 }
             }
         }
+        stage('Next step...') {
+            echo 'Next Step'
+        }
+        stage('last step...') {
+            echo 'last Step'
+        }
     }
 }
 
