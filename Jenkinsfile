@@ -1,4 +1,3 @@
-import org.springframework.boot.actuate.cache.CachesEndpoint
 
 pipeline {
     agent any
