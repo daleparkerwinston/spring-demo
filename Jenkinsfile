@@ -1,21 +1,22 @@
-
 pipeline {
     agent any
     stages {
         stage('Cloning repository') {
             steps {
-//                git branch: 'develop', url: 'https://github.com/daleparkerwinston/spring-demo.git'
-                sh 'git clone https://github.com/daleparkerwinston/spring-demo.git'
-                cd 'spring-demo'
-                sh 'git checkout develop'
+                git branch: 'develop', url: 'https://github.com/daleparkerwinston/spring-demo.git'
             }
         }
         stage('Maven build') {
             steps {
-                sh 'echo testing sh'
-//                withMaven {
-//                    sh "mvn clean package"
-//                }
+                withMaven {
+                    sh "mvn clean package"
+                }
+            }
+        }
+        stage('Next step') {
+            echo 'testing the next step'
+            steps {
+                sh 'echo testing'
             }
         }
     }
