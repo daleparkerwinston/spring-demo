@@ -1,4 +1,4 @@
-import ch.qos.logback.core.encoder.EchoEncoder
+
 
 pipeline {
     environment {
