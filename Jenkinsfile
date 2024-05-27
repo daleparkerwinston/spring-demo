@@ -14,10 +14,12 @@ pipeline {
         stage('Building image') {
             steps{
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build "daleparkerwinston/demo-spring-app:${env.BUILD_TAG}"
                 }
             }
         }
+        
+        
         stage('Deploy our image') {
             steps{
                 script {
