@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Cloning repository') {
             steps {
-                git branch: 'develop', credentialsId: 'git', url: "https://github.com/daleparkerwinston/spring-demo.git"
+                git branch: 'develop', url: 'https://github.com/daleparkerwinston/spring-demo.git'
             }
         }
         stage('Build artifact') {
