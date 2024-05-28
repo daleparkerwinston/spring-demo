@@ -17,9 +17,23 @@ spec:
     spec:
       containers:
         - name: spring-demo
-          image: docker.io/daleparkerwinston/getting-started:latest
+          image: docker.io/daleparkerwinston/demo-spring-app:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
               protocol: TCP
       restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-demo
+spec:
+  selector:
+    app: spring-demo
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
+  

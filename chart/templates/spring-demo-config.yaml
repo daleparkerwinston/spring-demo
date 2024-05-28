@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name}}-config
+data:
+  # kv format
+  name: "dale"
+  age: "42"
+
+  # file format
+  other.properties: |
+    city=los angeles, new york
